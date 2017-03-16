@@ -218,6 +218,9 @@ class Metasmoke:
                 'key': redunda_key,
                 'version': GlobalVars.commit
             }
+
+            headers = {'content-type': 'application/json'}
+            requests.post(GlobalVars.redunda_host + "/status.json", data=json.dumps(payload), headers=headers)
         except Exception as e:
             print e
 
