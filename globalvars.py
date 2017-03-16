@@ -337,3 +337,10 @@ class GlobalVars:
     except ConfigParser.NoOptionError:
         github_username = None
         github_password = None
+
+    try:
+        redunda_host = config.get("Config", "redunda_host")
+        redunda_key = config.get("Config", "redunda_key")
+    except ConfigParser.NoOptionError:
+        redunda_host = None
+        redunda_key = None

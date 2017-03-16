@@ -179,6 +179,7 @@ elif "first_start" in sys.argv and not GlobalVars.on_master:
     GlobalVars.charcoal_hq.send_message(GlobalVars.s_reverted)
 
 Metasmoke.send_status_ping()  # This will call itself every minute or so
+Metasmoke.send_redunda_ping()
 threading.Timer(600, Metasmoke.send_statistics).start()
 
 metasmoke_ws_t = Thread(name="metasmoke websocket", target=Metasmoke.init_websocket)

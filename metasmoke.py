@@ -205,6 +205,23 @@ class Metasmoke:
             print e
 
     @staticmethod
+    def send_redunda_ping():
+        if GlobalVars.redunda_host is None:
+            print "Redunda location not defined; not sending status ping"
+            return
+
+        threading.Timer(45, Metasmoke.send_redunda_ping).start()
+        redunda_key = GlobalVars.redunda_key
+
+        try:
+            payload = {
+                'key': redunda_key,
+                'version': GlobalVars.commit
+            }
+        except Exception as e:
+            print e
+
+    @staticmethod
     def update_code_privileged_users_list():
         payload = {'key': GlobalVars.metasmoke_key}
         headers = {'Content-type': 'application/json'}

@@ -12,3 +12,7 @@ location=location_here
 # Set GitHub keys
 # github_username=username@domain.com
 # github_password=p@55w0rd
+
+# Set Redunda details
+# redunda_host=https://redunda.sobotics.org
+# redunda_key=more_gibberish_here
